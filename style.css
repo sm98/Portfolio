@@ -7,6 +7,7 @@
   	background-color: #121212;
   	Color:#e1e1e1;	
 }
+
 .light{
 }
 
@@ -83,7 +84,7 @@ a{color: #a1a1a1;text-decoration: none;}
 a:hover { color: #FE5C4F; text-decoration: none; }
 
 .container{
-    max-width:900px !important; 
+    max-width:1200px !important; 
     margin:0 auto;/*make it centered*/
 }
 
