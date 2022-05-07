@@ -104,7 +104,6 @@ a:hover { color: #FE5C4F; text-decoration: none; }
 
 .card{
 	background-color: inherit;
-	border-radius: 5%;
 	overflow: hidden;
 }
 
