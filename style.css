@@ -19,7 +19,7 @@
 }
 
 .section{
-	padding-top: 10%;
+	padding-top: 5%;
 }
 .hero{
 	padding-top: 10%;
@@ -132,6 +132,6 @@ a:hover { color: #5047E5; text-decoration: none; }
     box-shadow: none;
 }
 
-.card :hover {
-	opacity: 0.5;
-}
+.card:hover {
+	opacity: 0.8;
+	}
