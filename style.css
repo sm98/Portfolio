@@ -4,18 +4,25 @@
 
 .dark{
 	margin: 0;
-  	background-color: #121212;
+	background-color: #121212;
   	Color:#e1e1e1;	
+	
 }
 
+.content{
+	max-width:1000px !important; 
+}
 .light{
+	margin: 0;
+	background-color:#e1e1e1 ;
+  	Color:#121212;	
 }
 
 .section{
-	padding-top: 5%;
+	padding-top: 10%;
 }
 .hero{
-	padding-top: 5%;
+	padding-top: 10%;
 }
 
 .project{
@@ -24,7 +31,7 @@
 }
 
 .footer{
-	padding-top: 5%;
+	padding-top: 15%;
 }
 
 #header{
@@ -38,6 +45,7 @@
 	border-bottom: 3px solid #121212;
 
 }
+
 .scrollUp{
 	transform: translateY(-56px);
 }
@@ -59,7 +67,7 @@
 
 
 .highlight{
-	color: #F94443;
+	color: #5047E5;
 }
 
 .fit{
@@ -81,11 +89,12 @@ h2{	font-size: clamp(30px,3vw,40px);font-family: 'Poppins', sans-serif !importan
 h3{	font-size: clamp(20px,2vw,25px);font-family: 'Source Sans Pro', sans-serif !important;}
 h4{	font-size: clamp(16px,1vw,20px);font-family: 'Source Sans Pro', sans-serif !important;}
 a{color: #a1a1a1;text-decoration: none;}
-a:hover { color: #FE5C4F; text-decoration: none; }
+a:hover { color: #5047E5; text-decoration: none; }
 
 .container{
-    max-width:1200px !important; 
+    
     margin:0 auto;/*make it centered*/
+	
 }
 
 
@@ -121,4 +130,8 @@ a:hover { color: #FE5C4F; text-decoration: none; }
 .navbar-toggler-icon:focus {
     outline: none;
     box-shadow: none;
+}
+
+.card :hover {
+	opacity: 0.5;
 }
