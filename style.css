@@ -2,11 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
+/*
 .dark{
-	margin: 0;
+margin: 0;
 	background-color: #3f3d56;
   	Color:#ffffff;	
 }
+*/
 
 .light{
 	margin: 0;
@@ -138,4 +140,4 @@ a:hover { color: #00BFA6; text-decoration: none; }
 	opacity: 0.5;
 	}
 
-.mobile-margin { margin-top: 50px; }
+.mobile-margin { margin-top: 100px; }
