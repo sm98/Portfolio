@@ -37,7 +37,7 @@
 
 #header{
 	font-family: 'Montserrat', sans-serif ;
-	background-color: #ffffff;
+	background-color: #f2f2f2;
 	font-weight: bold;
 	z-index: 20;
 	transition: all 0.3s;
@@ -138,4 +138,4 @@ a:hover { color: #00BFA6; text-decoration: none; }
 	opacity: 0.5;
 	}
 
-.mobile-margin { margin-top: 100px; }
+.mobile-margin { margin-top: 200px; }
