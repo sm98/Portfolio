@@ -1,3 +1,7 @@
+import Splide from '@splidejs/splide';
+
+
+new Splide( '.splide' ).mount();
 $(document).ready(function () {
   
 	'use strict';
