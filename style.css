@@ -72,7 +72,7 @@
 }
 
 .highlight{
-	color: #00BFA6;
+	color: rgb(0, 191, 166);
 }
 
 .fit{
@@ -89,7 +89,7 @@
 	justify-content: center;
 }
 
-h1{	font-size: clamp(50px,4vw,70px);font-weight: bold; font-family: 'Poppins', sans-serif !important; -webkit-text-fill-color: transparent; -webkit-text-stroke-width:1px;}
+h1{	font-size: clamp(50px,4vw,70px);font-weight: bold; font-family: 'Poppins', sans-serif !important; -webkit-text-fill-color: rgb(0, 191, 166); -webkit-text-stroke-width:1px;}
 h2{	font-size: clamp(30px,3vw,40px);font-weight: bold; font-family: 'Poppins', sans-serif !important;}
 h3{	font-size: clamp(20px,1vw,25px);font-weight: bold; font-family: 'Poppins', sans-serif !important;}
 h4{	font-size: clamp(16px,1vw,20px);font-family: 'Source Sans Pro', sans-serif !important;}
