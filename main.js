@@ -2,15 +2,15 @@ import Splide from '@splidejs/splide';
 
 
 new Splide( '.splide' ).mount();
-$(document).ready(function () {
-  
+
+
+$(document).ready(function () {  
 	'use strict';
-
+	window.alert("sometext");
 	var lockscroll=false;
-
 	 var c, currentScrollTop = 0,
 		 navbar = $('#header');
-  
+
 	 $(window).scroll(function () {
 		var a = $(window).scrollTop();
 		var b = 56;
@@ -19,12 +19,14 @@ $(document).ready(function () {
 	   
 		if ((c < currentScrollTop )&&( a > b + b )&&(!lockscroll)) {
 		  navbar.addClass("scrollUp");
-		} else if (c > currentScrollTop && !(a <= b)) {
+		} 
+		else if (c > currentScrollTop && !(a <= b)) {
 		  navbar.removeClass("scrollUp");
 		}
 		c = currentScrollTop;
 	});
 	var body = document.body;
+	
 	var $hamburger = $(".hamburger");
   	$hamburger.on("click", function(e) {
     $hamburger.toggleClass("is-active");

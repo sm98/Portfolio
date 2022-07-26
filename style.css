@@ -2,22 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-/*
-.dark{
-margin: 0;
-	background-color: #3f3d56;
-  	Color:#ffffff;	
-}
-*/
 
 .light{
 	margin: 0;
-	background-color:#ffffff ;
-  	Color: #3f3d56;	
 }
 
 .content{
-	max-width:1000px !important; 
+	max-width:1200px !important; 
 }
 
 .hero{
@@ -40,15 +31,23 @@ margin: 0;
 	padding-top: 15%;
 }
 
+.footer2{
+	background-color: #000000;
+	color: #ffffff;
+	height: 100vh;
+	width: 100%vw;
+    overflow: auto;
+}
+
 #header{
 	font-family: 'Montserrat', sans-serif ;
-	background-color: #f2f2f2;
+	background-color: #ffffff;
 	font-weight: bold;
 	z-index: 20;
 	transition: all 0.3s;
 	position: fixed;
 	width: 100%;
-	Color: #272F31;
+	Color: #000000;
 	border-bottom: 2px solid #f2f2f2;
 
 }
@@ -65,7 +64,6 @@ margin: 0;
 #navbarMenu{
   width: 100%;
   height:100%;
-  background: #f2f2f2;
   position: fixed;
   text-align: center;
   transition: all 0.1s;
@@ -91,12 +89,13 @@ margin: 0;
 	justify-content: center;
 }
 
-h1{	font-size: clamp(50px,4vw,70px);font-weight: bold; font-family: 'Montserrat', sans-serif !important;}
-h2{	font-size: clamp(30px,3vw,40px);font-weight: bold; font-family: 'Montserrat', sans-serif !important;}
-h3{	font-size: clamp(20px,2vw,25px);font-weight: bold; font-family: 'Source Sans Pro', sans-serif !important;}
+h1{	font-size: clamp(50px,4vw,70px);font-weight: bold; font-family: 'Poppins', sans-serif !important; -webkit-text-fill-color: transparent; -webkit-text-stroke-width:1px;}
+h2{	font-size: clamp(30px,3vw,40px);font-weight: bold; font-family: 'Poppins', sans-serif !important;}
+h3{	font-size: clamp(20px,1vw,25px);font-weight: bold; font-family: 'Poppins', sans-serif !important;}
 h4{	font-size: clamp(16px,1vw,20px);font-family: 'Source Sans Pro', sans-serif !important;}
+h5{	font-size: clamp(50px,4vw,70px);font-weight: bold; font-family: 'Poppins', sans-serif !important;}
 
-a{color: #9696a0;text-decoration: none;}
+a{color: #000000;text-decoration: none;}
 a:hover { color: #00BFA6; text-decoration: none; }
 
 .container{
@@ -144,3 +143,15 @@ a:hover { color: #00BFA6; text-decoration: none; }
 	}
 
 .mobile-margin { margin-top: 100px; }
+
+.fa-linkedin-in {
+color:white;
+}
+
+.fa-dribbble {
+	color:white;
+}
+
+.fa-behance {
+	color:white;
+}
