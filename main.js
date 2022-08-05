@@ -10,12 +10,14 @@ $(document).ready(function () {
 	let mouseCursor = document.querySelector(".cursor");
 	let navLinks = document.querySelectorAll(".nav-links li");
 	let projLinks = document.querySelectorAll(".project-link");
-	console.log(navLinks);
-	console.log(projLinks);
+	let footer = document.querySelectorAll(".footer2");
+
+	console.log(footer);
 	
 
 	window.addEventListener('mousemove',cursor);
 	function cursor(e){
+	
 		mouseCursor.style.top = e.pageY + 'px';
 		mouseCursor.style.left = e.pageX + 'px';
 	}
@@ -40,6 +42,15 @@ $(document).ready(function () {
 		});
 	});
 
+	footer.forEach(link=>{
+		link.addEventListener('mouseover',()=>{
+			document.getElementById('circle').style.background = 'white';
+			console.log("ear");
+		});
+		link.addEventListener('mouseleave',()=>{
+			document.getElementById('circle').style.background = 'black';
+		});
+	});
 
 
 

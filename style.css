@@ -195,12 +195,13 @@ color:white;
 	transform: translate(-50%,-50%);
 	z-index:10;
 	pointer-events: none;
-	transition: all 0.3s ease;
+	transition: 0.1s ease;
 	transition-property: transform;
 	background: #000000;
-	color: #3f3d56;
 	}
-
+.light-cursor{
+	background: white;
+}
 
 .link-grow {
     transform:scale(4);
@@ -213,6 +214,8 @@ color:white;
 	mix-blend-mode: difference;
     background: white;
 }
+
+
 
 .nav-link:after {    
 	background: none repeat scroll 0 0 transparent;
@@ -232,3 +235,4 @@ color:white;
 a{color: #000000;text-decoration: none; position: relative;}
 a:hover { color: #000000;	text-decoration: none; cursor: none;}
 .nav-link:hover { color: #000000;	text-decoration: none; cursor: none;}
+
