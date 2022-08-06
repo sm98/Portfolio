@@ -11,12 +11,35 @@ $(document).ready(function () {
 	let navLinks = document.querySelectorAll(".nav-links li");
 	let projLinks = document.querySelectorAll(".project-link");
 	let footer = document.querySelectorAll(".footer2");
+	let contact = document.querySelectorAll(".contact-link");
 
-	console.log(footer);
+	console.log(contact);
 	
+	document.addEventListener('mouseover',function(){
+		mouseCursor.classList.add("link-normal");
+	  });
 
+	navLinks.forEach(link=>{
+		link.addEventListener('mouseover',()=>{
+			mouseCursor.classList.add("link-grow");
+			
+		});
+		link.addEventListener('mouseleave',()=>{
+			mouseCursor.classList.remove("link-grow");
+		});
+	});
 	
 	navLinks.forEach(link=>{
+		link.addEventListener('mouseover',()=>{
+			mouseCursor.classList.add("link-grow");
+			
+		});
+		link.addEventListener('mouseleave',()=>{
+			mouseCursor.classList.remove("link-grow");
+		});
+	});
+
+	contact.forEach(link=>{
 		link.addEventListener('mouseover',()=>{
 			mouseCursor.classList.add("link-grow");
 			

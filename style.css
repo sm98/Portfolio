@@ -109,7 +109,7 @@ body{
 
 
 
-h1{	font-size: 55px;font-weight: bold; font-family: 'Poppins', sans-serif !important; -webkit-text-fill-color: rgb(255,255,255); -webkit-text-stroke-width:2px;}
+h1{	font-size: 55px;font-weight: bold; font-family: 'Poppins', sans-serif !important; -webkit-text-fill-color: rgb(255,255,255); -webkit-text-stroke-width:0.5px;}
 h2{	font-size: 40px;font-weight: bold; font-family: 'Poppins', sans-serif !important;}
 h3{	font-size: 35px;font-weight: bold; font-family: 'Poppins', sans-serif !important;}
 h4{	font-size: 20px;font-weight: bold; font-family: 'Poppins', sans-serif !important;}
@@ -191,7 +191,7 @@ color:white;
 	display: block;
 	width: 10rem;
 	height: 10rem;
-	transform:  translate(-50%,-50%) scale(0.1) ;
+	transform: scale(0) ;
 	border-radius:100%;
 	position: fixed;
 	z-index:10;
@@ -202,7 +202,7 @@ color:white;
     background: white;
 	}
 
-
+.link-normal{transform:  translate(-50%,-50%) scale(0.1) ;}
 .link-grow {transform:translate(-50%,-50%) scale(0.5);}
 .link-grow-large {transform: translate(-50%,-50%) scale(1);}
 .light-cursor{background: white;}
@@ -226,4 +226,4 @@ color:white;
 a{color: #000000;text-decoration: none; position: relative;}
 a:hover { color: #000000;	text-decoration: none;}
 .nav-link:hover { color: #000000;	text-decoration: none;}
-
+.contact-link:hover:{color:white !important;}
