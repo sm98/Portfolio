@@ -109,7 +109,7 @@ body{
 
 
 
-h1{	font-size: 55px;font-weight: bold; font-family: 'Poppins', sans-serif !important; -webkit-text-fill-color: rgb(255,255,255); -webkit-text-stroke-width:1px;}
+h1{	font-size: 55px;font-weight: bold; font-family: 'Poppins', sans-serif !important; -webkit-text-fill-color: rgb(255,255,255); -webkit-text-stroke-width:2px;}
 h2{	font-size: 40px;font-weight: bold; font-family: 'Poppins', sans-serif !important;}
 h3{	font-size: 35px;font-weight: bold; font-family: 'Poppins', sans-serif !important;}
 h4{	font-size: 20px;font-weight: bold; font-family: 'Poppins', sans-serif !important;}
@@ -188,33 +188,24 @@ color:white;
 .bottom-buffer-mobile{margin-bottom:100px;}
 
 .cursor{
-	width: 1rem;
-	height: 1rem;
+	display: block;
+	width: 10rem;
+	height: 10rem;
+	transform:  translate(-50%,-50%) scale(0.1) ;
 	border-radius:100%;
-	position: absolute;
-	transform: translate(-50%,-50%);
+	position: fixed;
 	z-index:10;
 	pointer-events: none;
-	transition: 0.1s ease;
-	transition-property: transform;
-	background: #000000;
+	transition: transform 0.3s ease;
+	
+	mix-blend-mode: difference;
+    background: white;
 	}
-.light-cursor{
-	background: white;
-}
 
-.link-grow {
-    transform:scale(4);
-	mix-blend-mode: difference;
-    background: white;
-}
 
-.link-grow-large {
-    transform: scale(10);
-	mix-blend-mode: difference;
-    background: white;
-}
-
+.link-grow {transform:translate(-50%,-50%) scale(0.5);}
+.link-grow-large {transform: translate(-50%,-50%) scale(1);}
+.light-cursor{background: white;}
 
 
 .nav-link:after {    
@@ -233,6 +224,6 @@ color:white;
 .nav-link:hover:after { width: 60%; left: 20%; }
 .nav-link{color: #000000;text-decoration: none; position: relative;}
 a{color: #000000;text-decoration: none; position: relative;}
-a:hover { color: #000000;	text-decoration: none; cursor: none;}
-.nav-link:hover { color: #000000;	text-decoration: none; cursor: none;}
+a:hover { color: #000000;	text-decoration: none;}
+.nav-link:hover { color: #000000;	text-decoration: none;}
 

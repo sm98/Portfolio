@@ -15,13 +15,7 @@ $(document).ready(function () {
 	console.log(footer);
 	
 
-	window.addEventListener('mousemove',cursor);
-	function cursor(e){
 	
-		mouseCursor.style.top = e.pageY + 'px';
-		mouseCursor.style.left = e.pageX + 'px';
-	}
-
 	navLinks.forEach(link=>{
 		link.addEventListener('mouseover',()=>{
 			mouseCursor.classList.add("link-grow");
@@ -42,15 +36,7 @@ $(document).ready(function () {
 		});
 	});
 
-	footer.forEach(link=>{
-		link.addEventListener('mouseover',()=>{
-			document.getElementById('circle').style.background = 'white';
-			console.log("ear");
-		});
-		link.addEventListener('mouseleave',()=>{
-			document.getElementById('circle').style.background = 'black';
-		});
-	});
+	
 
 
 
@@ -115,3 +101,20 @@ $(document).ready(function () {
 	body.classList.toggle("lockscroll");
   	});
   });
+
+
+
+
+$(document).on('mousemove', function(e){
+    $('#circle').css({
+       left:  e.clientX,
+       top:   e.clientY,
+    });
+});
+
+$(window).on('scroll', function(e){ 
+	$('#circle').css({
+		left:  e.clientX,
+		top:   e.clientY,
+	 });
+});
