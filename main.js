@@ -89,18 +89,18 @@ $(document).ready(function () {
 		var card3 =$('#card3').offset().top;
 		var card4 =$('#card4').offset().top;
 		var card5 =$('#card5').offset().top;
-		var card6 =$('#card6').offset().top;
-		if(bottom3rdOfWindow>card6){$("#bg").css("background-color", "#fef8f7");$("#header").css("background-color", "#fef8f7"); }
-		else{
-			if(bottom3rdOfWindow>card5){$("#bg").css("background-color", "#fef4f1");$("#header").css("background-color", "#fef4f1"); }
+		//var card6 =$('#card6').offset().top;
+		//if(bottom3rdOfWindow>card6){$("#bg").css("background-color", "#fef8f7");$("#header").css("background-color", "#fef8f7"); }
+		//else{
+			if(bottom3rdOfWindow>card5){$("#bg").css("background-color", "#ebf9f4");$("#header").css("background-color", "#ebf9f4"); }
 			else{
-				if(bottom3rdOfWindow>card4){$("#bg").css("background-color", "#f6f7f1");$("#header").css("background-color", "#f6f7f1"); }
+				if(bottom3rdOfWindow>card4){$("#bg").css("background-color", "#d5e8f2");$("#header").css("background-color", "#d5e8f2"); }
 				else{
-					if(bottom3rdOfWindow>card3){$("#bg").css("background-color", "#f6f7f4");$("#header").css("background-color", "#f6f7f4"); }
+					if(bottom3rdOfWindow>card3){$("#bg").css("background-color", "#fee7ec");$("#header").css("background-color", "#fee7ec"); }
 					else{
 						if(bottom3rdOfWindow>card2){$("#bg").css("background-color", "#ebf9f4"); $("#header").css("background-color", "#ebf9f4");}
 						else{
-							if(bottom3rdOfWindow>card1){$("#bg").css("background-color", "#fee7ec"); $("#header").css("background-color", "#fee7ec");}
+							if(bottom3rdOfWindow>card1){$("#bg").css("background-color", "#fcfae1"); $("#header").css("background-color", "#fcfae1");}
 							else{
 								$("#bg").css("background-color", "#ffffff");$("#header").css("background-color", "#ffffff");
 							}
@@ -108,7 +108,7 @@ $(document).ready(function () {
 					}
 				}
 			}			
-		}
+		//}
 		
 		
 
