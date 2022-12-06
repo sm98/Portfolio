@@ -96,7 +96,7 @@ $(document).ready(function () {
 			else{
 				if(bottom3rdOfWindow>card4){$("#bg").css("background-color", "#d5e8f2");$("#header").css("background-color", "#d5e8f2"); }
 				else{
-					if(bottom3rdOfWindow>card3){$("#bg").css("background-color", "#fee7ec");$("#header").css("background-color", "#fee7ec"); }
+					if(bottom3rdOfWindow>card3){$("#bg").css("background-color", "#FEF4E7");$("#header").css("background-color", "#FEF4E7"); }
 					else{
 						if(bottom3rdOfWindow>card2){$("#bg").css("background-color", "#ebf9f4"); $("#header").css("background-color", "#ebf9f4");}
 						else{
