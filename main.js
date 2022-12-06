@@ -92,7 +92,7 @@ $(document).ready(function () {
 		//var card6 =$('#card6').offset().top;
 		//if(bottom3rdOfWindow>card6){$("#bg").css("background-color", "#fef8f7");$("#header").css("background-color", "#fef8f7"); }
 		//else{
-			if(bottom3rdOfWindow>card5){$("#bg").css("background-color", "#ebf9f4");$("#header").css("background-color", "#ebf9f4"); }
+			if(bottom3rdOfWindow>card5){$("#bg").css("background-color", "#ffffff");$("#header").css("background-color", "#ffffff"); }
 			else{
 				if(bottom3rdOfWindow>card4){$("#bg").css("background-color", "#d5e8f2");$("#header").css("background-color", "#d5e8f2"); }
 				else{
