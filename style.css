@@ -74,8 +74,19 @@ body{}
 
 .highlight{
 	color: rgb(0, 191, 166);
-	
 }
+.highlight:hover { 
+	color: rgb(0, 191, 166);
+  }
+
+  .highlight2{
+	color: rgb(0, 191, 166);
+}
+.highlight2:hover { 
+	color: rgb(0, 191, 166);
+  }
+
+
 
 .fit{
 	width: 100%;
@@ -171,6 +182,7 @@ color:white;
 .top-buffer-mobile{margin-top:100px;}
 .top-buffer-small{margin-top:5vh;}
 .top-buffer-big{margin-top:20vh;}
+.top-buffer-big2{margin-top:30vh;}
 .bottom-buffer-mobile{margin-bottom:100px;}
 
 .cursor{
