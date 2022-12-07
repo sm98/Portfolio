@@ -74,7 +74,7 @@ body{}
 
 .highlight{
 	color: rgb(0, 191, 166);
-	font-size: 16px;
+	
 }
 
 .fit{
@@ -170,6 +170,7 @@ color:white;
 .bottom-buffer{margin-bottom:200px;}
 .top-buffer-mobile{margin-top:100px;}
 .top-buffer-small{margin-top:5vh;}
+.top-buffer-big{margin-top:20vh;}
 .bottom-buffer-mobile{margin-bottom:100px;}
 
 .cursor{
