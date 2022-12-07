@@ -38,7 +38,7 @@
 					<div class="navbar-collapse collapse" >
 						<ul class="nav-links navbar-nav ms-auto ">
 							
-							<li class="nav-item"><a class="nav-link" href="#work"><h4>work</h4></a></li>
+							<li class="nav-item"><a class="nav-link" href="#work" ><h4>work</h4></a></li>
 							<li class="nav-item"><a class="nav-link" href="https://sanoopmenon.com/about.html"><h4>about</h4></a></li>
 							<li class="nav-item"><a class="nav-link" href="res/resume.pdf" target="_blank"><h4>resume</h4></a></li>
 							<li class="nav-item"><a class="nav-link" href="#contact" ><h4>contact</h4></a></li>
@@ -54,10 +54,10 @@
 				<div class="collapse navbar-collapse horCenter pt-5 mt-5" id="navbarMenu">
 					<ul class="navbar-nav ">
 		   				<h1>
-				        <li class="nav-item"><a class="nav-link" href="#work">Work</a></li>
+				        <li class="nav-item"><a class="nav-link" onclick="reloadwork()">Work</a></li>
 				        <li class="nav-item"><a class="nav-link" href="https://sanoopmenon.com/about.html">About</a></li>
 				        <li class="nav-item"><a class="nav-link" href="res/resume.pdf" target="_blank">Resume</a></li>
-						<li class="nav-item"><a class="nav-link" href="#contact" >Contact</a></li>
+						<li class="nav-item"><a class="nav-link" onclick="reloadcon()" >Contact</a></li>
 		      			</h1>
 		      	
 		      			<div class="mt-5" >
@@ -409,5 +409,19 @@
 				</div>
 			</div>
 		</div>
+		<script>
+
+function reloadwork() {
+	window.location.href = 'http://www.sanoopmenon.com#work';
+}
+
+
+function reloadcon() {
+	window.location.href = 'http://www.sanoopmenon.com#contact';
+
+}
+
+		</script>
   	</body>
+
 </html>
