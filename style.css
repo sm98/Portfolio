@@ -3,7 +3,7 @@
 
 .light{margin: 0;}
 .color-change{transition: background-color 1s;}
-body{}
+
 .content{max-width:1000px !important; }
 .content2{max-width:800px !important; }
 .hero{padding-top: 5%;}
@@ -20,6 +20,7 @@ body{}
 
 .footer{
 	padding-top: 15%;
+
 	
 }
 
@@ -27,14 +28,15 @@ body{}
 	text-align: center;
 }
 .footer2{
-	background-color: #000000;
+	background-color: #000;
 	color: #ffffff;
 	height: 50vh;
 	width: 100%;
-    overflow: auto;
+    overflow: visible;
 	z-index:3;
 	position: relative;
 }
+
 .navbar{
 	z-index:2;
 	background-color: #ffffff;
