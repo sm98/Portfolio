@@ -60,10 +60,6 @@ $(document).ready(function () {
 	});
 
 	
-	
-
-
-
 	 $(window).scroll(function () {
 		var a = $(window).scrollTop();
 		var b = 56;
