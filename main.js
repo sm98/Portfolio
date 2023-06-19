@@ -101,10 +101,9 @@ $(document).ready(function () {
 						else{
 							if(bottom3rdOfWindow>card1){$("#bg").css("background-color", "#ebf9f4"); $("#header").css("background-color", "#ebf9f4");}
 							else{
-								if(bottom3rdOfWindow>card0){$("#bg").css("background-color", "#ffffff"); $("#header").css("background-color", "#ffffff");}
-								else{
+								
 								$("#bg").css("background-color", "#ffffff");$("#header").css("background-color", "#ffffff");
-								}
+								
 							}
 						}
 					}
