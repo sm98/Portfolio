@@ -86,25 +86,32 @@ $(document).ready(function () {
 		var card4 =$('#card4').offset().top;
 		var card5 =$('#card5').offset().top;
 		var card6 =$('#card6').offset().top;
-		if(bottom3rdOfWindow>card6){$("#bg").css("background-color", "#f9efeb");$("#header").css("background-color", "#f9efeb"); }
+
+		
+
+		if(bottom3rdOfWindow>card6){$("#bg").css("background-color", "#ffffff");$("#header").css("background-color", "#ffffff"); }
 		else{
-			if(bottom3rdOfWindow>card5){$("#bg").css("background-color", "#f3ebf9");$("#header").css("background-color", "#f3ebf9"); }
+			if(bottom3rdOfWindow>card5){$("#bg").css("background-color", "#f9ebeb");$("#header").css("background-color", "#f9ebeb"); }
 			else{
-				if(bottom3rdOfWindow>card4){$("#bg").css("background-color", "#d5e8f2");$("#header").css("background-color", "#d5e8f2"); }
+				if(bottom3rdOfWindow>card4){$("#bg").css("background-color", "#f3ebf9");$("#header").css("background-color", "#f3ebf9"); }
 				else{
-					if(bottom3rdOfWindow>card3){$("#bg").css("background-color", "#f9ebeb");$("#header").css("background-color", "#f9ebeb"); }
+					if(bottom3rdOfWindow>card3){$("#bg").css("background-color", "#fcfae1");$("#header").css("background-color", "#fcfae1"); }
 					else{
-						if(bottom3rdOfWindow>card2){$("#bg").css("background-color", "#ebf9f4"); $("#header").css("background-color", "#ebf9f4");}
+						if(bottom3rdOfWindow>card2){$("#bg").css("background-color", "#f9efeb"); $("#header").css("background-color", "#f9efeb");}
 						else{
-							if(bottom3rdOfWindow>card1){$("#bg").css("background-color", "#fcfae1"); $("#header").css("background-color", "#fcfae1");}
+							if(bottom3rdOfWindow>card1){$("#bg").css("background-color", "#ebf9f4"); $("#header").css("background-color", "#ebf9f4");}
 							else{
+								if(bottom3rdOfWindow>card0){$("#bg").css("background-color", "#ffffff"); $("#header").css("background-color", "#ffffff");}
+								else{
 								$("#bg").css("background-color", "#ffffff");$("#header").css("background-color", "#ffffff");
+								}
 							}
 						}
 					}
 				}
 			}			
 		}
+	
 		
 		
 
