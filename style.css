@@ -91,7 +91,12 @@
 	color: rgb(0, 191, 166);
   }
 
-
+  .highlight3{
+	color: rgb(7,134,117);
+}
+.highlight3:hover{
+	color: rgb(7, 134, 117);
+}
 
 .fit{
 	width: 100%;
