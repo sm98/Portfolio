@@ -33,7 +33,7 @@
 	color: #ffffff;
 	height: 50vh;
 	width: 100%;
-    overflow: visible;
+    overflow: hidden;
 	z-index:3;
 	position: relative;
 }
