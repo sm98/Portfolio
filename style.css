@@ -4,14 +4,15 @@
 .light{margin: 0;}
 .color-change{transition: background-color 1s;}
 
-.content{max-width:1000px !important; }
+/*.content{max-width:1000px !important; }
 .content2{max-width:800px !important; }
+*/
 .hero{padding-top: 5%;}
-.herobanner{padding-top: 7%;}
+/*.herobanner{padding-top: 7%;}*/
 .hero2{padding-top: 5%;}
 .section{padding-top: 10%;}
 .subsection{padding-top: 5%;}
-.about{padding-top: 25%;}
+.about{padding-top: 10%;}
 .carousel-indicators{z-index: 1;}
 
 .project{
@@ -132,7 +133,7 @@ sign{color: #a9abab;}
 }
 
 
-
+  
 .contact li{
 	color: inherit;
   	display: inline;
@@ -247,3 +248,13 @@ a{color: #000000;text-decoration: none; position: relative;}
 a:hover { color: #000000;	text-decoration: none;}
 .nav-link:hover { color: #000000;	text-decoration: none;}
 .contact-link:hover:{color:white !important;}
+
+
+
+@media (max-width: 575.98px) {.container {max-width: 100%;}}
+@media (min-width: 576px) and (max-width: 767.98px) {.container {max-width: 576px;}}
+@media (min-width: 768px) and (max-width: 991.98px) {.container {max-width: 700px; }}
+@media (min-width: 992px) and (max-width: 1199.98px) {.container {max-width: 900px;}}
+@media (min-width: 1200px) and (max-width: 1599.98px) {.container {max-width: 1000px;}}
+@media (min-width: 1600px) and (max-width: 2047.98px) {.container {max-width: 1200px;}}
+@media (min-width: 2048px) {.container {max-width: 1600px;}}
