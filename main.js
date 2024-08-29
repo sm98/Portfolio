@@ -6,7 +6,7 @@ $(document).ready(function () {
 	 var c, currentScrollTop = 0,
 		 navbar = $('#header');
 
-
+	var togglescroll = true;
 	let mouseCursor = document.querySelector(".cursor");
 	let navLinks = document.querySelectorAll(".nav-links li");
 	let projLinks = document.querySelectorAll(".project-link");
@@ -87,24 +87,30 @@ $(document).ready(function () {
 		var card5 =$('#card5').offset().top;
 //		var card6 =$('#card6').offset().top;
 
-		
+		function toggleLottie() {
+			
+			var element = document.getElementById('lottiefile');
+			element.classList.toggle('hidden');
+		}
 
+		
 //		if(bottom3rdOfWindow>card6){$("#bg").css("background-color", "#ffffff");$("#header").css("background-color", "#ffffff"); }
 //		else{
-			if(bottom3rdOfWindow>card5){$("#bg").css("background-color", "#ffffff");$("#header").css("background-color", "#ffffff"); }
+			if(bottom3rdOfWindow>card5){$("#bg").css("background-color", "#ffffff");$("#header").css("background-color", "#ffffff"); document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#FFEDF3';rectangle.style.color = '#DA8FB7';});}
 			else{
-				if(bottom3rdOfWindow>card4){$("#bg").css("background-color", "#ebf9f4");$("#header").css("background-color", "#ebf9f4"); }
+				if(bottom3rdOfWindow>card4){$("#bg").css("background-color", "#ebf9f4");$("#header").css("background-color", "#ebf9f4"); document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#CDF2E5';rectangle.style.color = '#8AB8A7';});}
 				else{
-					if(bottom3rdOfWindow>card3){$("#bg").css("background-color", "#fcfae1");$("#header").css("background-color", "#fcfae1"); }
+					if(bottom3rdOfWindow>card3){$("#bg").css("background-color", "#fcfae1");$("#header").css("background-color", "#fcfae1"); document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#F7F3C4';rectangle.style.color = '#C6C187';});}
 					else{
-						if(bottom3rdOfWindow>card2){$("#bg").css("background-color", "#f9efeb"); $("#header").css("background-color", "#f9efeb");}
+						if(bottom3rdOfWindow>card2){$("#bg").css("background-color", "#f9efeb"); $("#header").css("background-color", "#f9efeb");document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#EDD4CD';rectangle.style.color = '#D09E90';});}
 						else{
-							if(bottom3rdOfWindow>card1){$("#bg").css("background-color", "#ebf3f9"); $("#header").css("background-color", "#ebf3f9");}
+							if(bottom3rdOfWindow>card1){$("#bg").css("background-color", "#ebf3f9"); $("#header").css("background-color", "#ebf3f9");document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#CBE2F2';rectangle.style.color = '#91AFC4';if(togglescroll==true){toggleLottie();togglescroll=false}});}
 							else{
 								
-								$("#bg").css("background-color", "#ffffff");$("#header").css("background-color", "#ffffff");
-								
+								$("#bg").css("background-color", "#ffffff");$("#header").css("background-color", "#ffffff");document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = 'white';rectangle.style.color = 'white';});
 							}
+								
+							
 						}
 					}
 				}
