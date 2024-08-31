@@ -130,13 +130,11 @@ h6{	font-size: 32px;font-weight: 600; font-family: 'Poppins', sans-serif !import
 clamp(0.875rem, 1.5vw, 1rem);
 */
 
-h1{font-weight: 600; font-family: 'Work Sans', sans-serif !important; color: #0D0C21;} /*Hello*/
-h2{font-weight: 500; font-family: 'Poppins', sans-serif !important; color:#ffffff;}  	/**/
-h3{font-weight: 00; font-family: 'Poppins', sans-serif !important; color: #0D0C21;} 	/**/
-h4{font-weight: 200; font-family: 'Poppins' !important; color:#0D0C21;}              	/*nav*/
-h7{font-weight: 200; font-family: 'Lora' !important; color:#0D0C21;}              		/**/
-p{font-weight: 500; font-family: 'Lora' !important; color:#0D0C21;}                  	/*content*/
-
+h1{font-weight: 600; font-family: 'Work Sans', sans-serif !important; color: #292929;} 
+h3{font-weight: 500; font-family: 'Work Sans', sans-serif !important; color: #0D0C21;} 
+h5{font-weight: 400; font-family: 'Work Sans', sans-serif !important; color:#0D0C21;}
+h7{font-weight: 600; font-family: 'Lora' !important; color:#0D0C21;}   
+p{font-weight: 100; font-family: 'Lora' !important; color:#0D0C21;}
 
 sign{color: #a9abab;}
 
@@ -182,11 +180,14 @@ sign{color: #a9abab;}
     box-shadow: none;
 }
 
+
 .card:hover {
 	opacity: 0.5;
 	}
 
-.mobile-margin { margin-top: 100px; }
+.mobile-margin { padding-top: 20vh;}
+.mobile-margin-big { padding-top: 20vh;}
+.mobile-spacing{padding-top:10vh;}
 
 .fa-linkedin-in {
 color: rgb(0, 191, 166);;
@@ -216,7 +217,7 @@ color: rgb(0, 191, 166);;
 
 .chip{ 	display: inline-block; padding: 1vh 1vw 1vh 1vw; border-radius: 0.5vw;transition: background-color 1s ease;}
 
-.mobile-chip{		display: inline-block; padding: 0.5vh 0.8vw 0.5vh 0.8vw; border-radius: 1vw; background-color: #E8E4E4; color: #A09A9A !important;}
+.mobile-chip{	display: inline-block; padding: 0.5vh 0.8vw 0.5vh 0.8vw; border-radius: 1vw; background-color: #CFEBFF; color: #84B2D3 !important;}
 
 
 .top-buffer { margin-top:200px; }
@@ -262,6 +263,7 @@ color: rgb(0, 191, 166);;
 	background: #000;
 	transition: width 0.3s ease 0s, left 0.3s ease 0s;
 	width: 0;
+	
 }
 
 .nav-link:hover:after { width: 60%; left: 20%; }
@@ -285,6 +287,7 @@ a:hover { color: #000000;	text-decoration: none;}
 html, body {
 	height: 100%;
 	margin: 0;
+	padding: 0;
   }
 
   .centered-container {
@@ -315,5 +318,52 @@ html, body {
 }
 
 
-
+.masonry {
+	column-count: 4;
+	column-gap: 1rem;
+}
+.masonry-item {
+	break-inside: avoid;
+	margin-bottom: 1rem;
+	position: relative; /* Make sure the overlay is positioned correctly */
+}
+.masonry-item img {
+	width: 100%;
+	height: auto;
+	display: block; /* Remove extra space below image */
+}
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+	color: white;
+	opacity: 0;
+	transition: opacity 0.3s ease; /* Smooth transition */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 1rem;
+}
+.masonry-item:hover .overlay {
+	opacity: 1;
+}
+@media (max-width: 1024px) {
+	.masonry {
+		column-count: 3;
+	}
+}
+@media (max-width: 768px) {
+	.masonry {
+		column-count: 2;
+	}
+}
+@media (max-width: 576px) {
+	.masonry {
+		column-count: 1;
+	}
+}
 

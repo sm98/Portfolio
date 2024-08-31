@@ -1,0 +1,33 @@
+h1  worksans 
+h2  worksans   white
+h3  worksans
+h4  worksa
+h5  
+h6  
+h7  lora        
+p   lora
+
+
+h1{font-weight: 600; font-family: 'Work Sans', sans-serif !important; color: #0D0C21;}
+h2{font-weight: 500; font-family: 'Poppins', sans-serif !important; color:#ffffff;}  
+h3{font-weight: 00; font-family: 'Poppins', sans-serif !important; color: #0D0C21;} 	
+h4{font-weight: 200; font-family: 'Poppins' !important; color:#0D0C21;}              	
+h7{font-weight: 200; font-family: 'Lora' !important; color:#0D0C21;}              		
+p{font-weight: 500; font-family: 'Lora' !important; color:#0D0C21;}                  	
+
+
+135p
+
+< - - - - - - - - -- - -- -- -- - - >
+
+Navbar h7
+Navscreen h1 h7
+Fold h1 h7 p 
+
+Case study h3 
+
+Proj Laptop h7 h3 h7 
+
+Proj Mobile h2 h1 h7
+
+footer h2 h4 h7
