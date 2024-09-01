@@ -368,3 +368,12 @@ html, body {
 	}
 }
 
+.horizontal-scroll {
+	overflow-x: auto;
+	white-space: nowrap;
+}
+.horizontal-scroll img {
+	display: inline-block;
+	height: 250px; /* Set the desired height here */
+	margin-right: 10px;
+}
