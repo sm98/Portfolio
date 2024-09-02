@@ -85,7 +85,7 @@ $(document).ready(function () {
 		var card3 =$('#card3').offset().top;
 		var card4 =$('#card4').offset().top;
 		var card5 =$('#card5').offset().top;
-//		var card6 =$('#card6').offset().top;
+		var card6 =$('#card6').offset().top;
 
 		function toggleLottie() {
 			
@@ -94,9 +94,9 @@ $(document).ready(function () {
 		}
 
 		
-//		if(bottom3rdOfWindow>card6){$("#bg").css("background-color", "#ffffff");$("#header").css("background-color", "#ffffff"); }
-//		else{
-			if(bottom3rdOfWindow>card5){$("#bg").css("background-color", "#ffffff");$("#header").css("background-color", "#ffffff"); document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#FFEDF3';rectangle.style.color = '#DA8FB7';});}
+		if(bottom3rdOfWindow>card6){$("#bg").css("background-color", "#ffffff");$("#header").css("background-color", "#ffffff"); document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#FFEDF3';rectangle.style.color = '#DA8FB7';});}
+		else{
+			if(bottom3rdOfWindow>card5){$("#bg").css("background-color", "#ebf3f9");$("#header").css("background-color", "#ebf3f9"); document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#CFEBFF';rectangle.style.color = '#84B2D3';});}
 			else{
 				if(bottom3rdOfWindow>card4){$("#bg").css("background-color", "#ebf9f4");$("#header").css("background-color", "#ebf9f4"); document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#CDF2E5';rectangle.style.color = '#8AB8A7';});}
 				else{
@@ -115,7 +115,7 @@ $(document).ready(function () {
 					}
 				}
 			}			
-//		}
+		}
 	
 		
 		

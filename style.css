@@ -377,3 +377,9 @@ html, body {
 	height: 250px; /* Set the desired height here */
 	margin-right: 10px;
 }
+
+.fixed-height {
+	/*height: 200px; /* Adjust as needed */
+	overflow: hidden; /* Optional: to handle overflow content */
+  }
+  
