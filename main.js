@@ -12,6 +12,7 @@ $(document).ready(function () {
 	let projLinks = document.querySelectorAll(".project-link");
 	let footer = document.querySelectorAll(".footer2");
 	let contact = document.querySelectorAll(".contact-link");
+	let linkmid = document.querySelectorAll(".link-mid");
 
 	console.log(contact);
 	
@@ -49,6 +50,17 @@ $(document).ready(function () {
 		});
 	});
 		
+	linkmid.forEach(link=>{
+		link.addEventListener('mouseover',()=>{
+			mouseCursor.classList.add("link-grow");
+			
+		});
+		link.addEventListener('mouseleave',()=>{
+			mouseCursor.classList.remove("link-grow");
+		});
+	});
+		
+
 	projLinks.forEach(link=>{
 		link.addEventListener('mouseover',()=>{
 			mouseCursor.classList.add("link-grow-large");
