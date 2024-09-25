@@ -165,6 +165,10 @@ sign{color: #a9abab;}
 	overflow: hidden;
 }
 
+.noborder{
+	border: none !important;
+}
+
 .caseTitle{
 	border-top: 1px solid black;
 	border-bottom: 1px solid black;
