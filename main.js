@@ -2,6 +2,7 @@
 $(document).ready(function () {  
 
 	const textElement = document.getElementById('changingText');
+	const textElement2 = document.getElementById('changingText2');
         const texts = ['Sanoop', ' सनूप', ' സനൂപ്']; // English, Devanagari, and Malayalam
         let index = 0;
         function changeText() {
@@ -10,6 +11,10 @@ $(document).ready(function () {
             textElement.classList.remove('slide-up');
             void textElement.offsetWidth; // Trigger a reflow to restart the animation
             textElement.classList.add('slide-up');
+			textElement2.textContent = texts[index];
+            textElement2.classList.remove('slide-up');
+            void textElement2.offsetWidth; // Trigger a reflow to restart the animation
+            textElement2.classList.add('slide-up');
 						
         }
 setInterval(changeText, 2500); // Change text every 3.5 seconds
