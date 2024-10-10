@@ -5,6 +5,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wdth,wght@62.5..100,100..900&family=Noto+Sans+Malayalam:wdth,wght@62.5..100,100..900;100,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wdth,wght@62.5..100,100..900&family=Noto+Sans+Malayalam:wdth,wght@62.5..100,100..900&display=swap');
+
 .light{margin: 0;}
 .color-change{transition: background-color 1s;}
 .section{padding-top: 10%;}
@@ -77,24 +80,24 @@
 }
 
 .highlight{
-	color: rgb(0, 191, 166);
+	color: rgb(34,184,111);
 }
 .highlight:hover { 
-	color: rgb(0, 191, 166);
+	color: rgb(34,184,111);
   }
 
   .highlight2{
-	color: rgb(0, 191, 166);
+	color: rgb(34,184,111);
 }
 .highlight2:hover { 
-	color: rgb(0, 191, 166);
+	color: rgb(34,184,111);
   }
 
   .highlight3{
-	color: rgb(7,134,117);
+	color: rgb(34,184,111);
 }
 .highlight3:hover{
-	color: rgb(7, 134, 117);
+	color: rgb(34,184,111);
 }
 
 .fit{
@@ -129,12 +132,18 @@ h5{	font-size: 64px;font-weight: 600; font-family: 'Poppins', sans-serif !import
 h6{	font-size: 32px;font-weight: 600; font-family: 'Poppins', sans-serif !important; -webkit-text-fill-color: #ffffff; -webkit-text-stroke-width: 1px;}
 clamp(0.875rem, 1.5vw, 1rem);
 */
+h0{font-size: 4vw; font-weight: 600; font-family: 'Poppins', sans-serif !important; color: #000;} 
+h01{font-size: 10vw; font-weight: 600; font-family: 'Poppins', sans-serif !important; color: #000;} 
 
-h1{font-weight: 600; font-family: 'Work Sans', sans-serif !important; color: #292929;} 
-h3{font-weight: 500; font-family: 'Work Sans', sans-serif !important; color: #0D0C21;} 
-h5{font-weight: 400; font-family: 'Work Sans', sans-serif !important; color:#0D0C21;}
+h1{font-weight: 600; font-family: 'Poppins', sans-serif !important; color: #292929;} 
+h3{font-weight: 500; font-family: 'Poppins', sans-serif !important; color: #0D0C21;} 
+h5{font-weight: 400; font-family: 'Poppins', sans-serif !important; color:#0D0C21;}
+h6{font-weight: 600; font-family: 'Lora' !important; color:#0D0C21;}   
 h7{font-weight: 600; font-family: 'Lora' !important; color:#0D0C21;}   
 p{font-weight: 100; font-family: 'Lora' !important; color:#0D0C21;}
+semibold{font-weight:500 !important;}
+.devnagari {font-family: 'Noto Sans Devanagari', sans-serif;}
+.malayalam {font-family: 'Noto Sans Malayalam', sans-serif;}
 
 sign{color: #a9abab;}
 
@@ -193,26 +202,26 @@ sign{color: #a9abab;}
 .mobile-spacing{padding-top:80px;}
 
 .fa-linkedin-in {
-color: rgb(0, 191, 166);;
+	color: rgb(34,184,111);
 }
 
 .fa-linkedin-in:hover {
-	color: rgb(0, 191, 166);;
+	color: rgb(34,184,111);
 	}
 
 .fa-dribbble {
-	color: rgb(0, 191, 166);
+	color: rgb(34,184,111);
 }
 
 .fa-behance {
-	color: rgb(0, 191, 166);
+	color: rgb(34,184,111);
 }
 
 .fa-envelope {
-	color: rgb(0, 191, 166);
-}
+	color: rgb(34,184,111);}
+
 .fa-envelope:hover {
-	color: rgb(0, 191, 166);
+	color: rgb(34,184,111);
 }
 
 
@@ -392,3 +401,43 @@ html, body {
     transition: none;
 }
 
+.slide-up {animation: slideUp 3s ease forwards;}
+        @keyframes slideUp {
+			0% {
+				opacity: 0;
+				-webkit-transform: translateY(200px); /* Safari */
+				transform: translateY(200px);
+			}
+			20% {
+				opacity: 1;
+				-webkit-transform: translateY(0);
+				transform: translateY(0);
+			}
+			80% {
+				opacity: 1;
+				-webkit-transform: translateY(0);
+				transform: translateY(0);
+			}
+			100% {
+				opacity: 0;
+				-webkit-transform: translateY(-200px);
+				transform: translateY(-200px);
+			}
+        }
+
+.change{ display: inline-block;
+	position: relative;
+	overflow: hidden;
+	white-space: nowrap;
+	text-align: center;}
+
+
+  
+    .fade-in {
+		opacity: 0;
+		transition: opacity 3s ease; 
+	  }
+  
+	  .visible {
+		opacity: 1;
+	  }

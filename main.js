@@ -1,5 +1,20 @@
 
 $(document).ready(function () {  
+
+	const textElement = document.getElementById('changingText');
+        const texts = ['Sanoop', ' सनूप', ' സനൂപ്']; // English, Devanagari, and Malayalam
+        let index = 0;
+        function changeText() {
+            index = (index + 1) % texts.length;
+            textElement.textContent = texts[index];
+            textElement.classList.remove('slide-up');
+            void textElement.offsetWidth; // Trigger a reflow to restart the animation
+            textElement.classList.add('slide-up');
+						
+        }
+setInterval(changeText, 2500); // Change text every 3.5 seconds
+
+
 	'use strict';
 	
 	var lockscroll=false;
@@ -13,8 +28,6 @@ $(document).ready(function () {
 	let footer = document.querySelectorAll(".footer2");
 	let contact = document.querySelectorAll(".contact-link");
 	let linkmid = document.querySelectorAll(".link-mid");
-
-	console.log(contact);
 	
 	document.addEventListener('mouseover',function(){
 		mouseCursor.classList.add("link-normal");
@@ -73,6 +86,22 @@ $(document).ready(function () {
 
 	
 	 $(window).scroll(function () {
+
+		function isElementInViewport(el) {
+			const rect = el.getBoundingClientRect();
+			return (rect.top < window.innerHeight && rect.bottom > 0);
+		  }
+		  
+		  const fadeIns = document.querySelectorAll('.fade-in');      
+		  fadeIns.forEach(function(el) {
+			if (isElementInViewport(el)) {
+			  el.classList.add('visible');} 
+			  else {el.classList.remove('visible');}
+		  });
+
+
+
+
 		var a = $(window).scrollTop();
 		var b = 56;
 	   
@@ -91,7 +120,10 @@ $(document).ready(function () {
 		var partOfWindow= $(window).height();
 		var bottom3rdOfWindow = topOfWindow + (partOfWindow*2/3);
 		var bottomOfWindow = topOfWindow + $(window).height();
-
+		
+		
+		
+		var card0 =$('#card0').offset().top;
 		var card1 =$('#card1').offset().top;
 		var card2 =$('#card2').offset().top;
 		var card3 =$('#card3').offset().top;
@@ -105,6 +137,7 @@ $(document).ready(function () {
 			element.classList.toggle('hidden');
 		}
 
+	
 		
 		if(bottom3rdOfWindow>card6){$("#bg").css("background-color", "#ffffff");$("#header").css("background-color", "#ffffff"); document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#FFEDF3';rectangle.style.color = '#DA8FB7';});}
 		else{
@@ -116,10 +149,12 @@ $(document).ready(function () {
 					else{
 						if(bottom3rdOfWindow>card2){$("#bg").css("background-color", "#f9efeb"); $("#header").css("background-color", "#f9efeb");document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#EDD4CD';rectangle.style.color = '#C69688';});}
 						else{
-							if(bottom3rdOfWindow>card1){$("#bg").css("background-color", "#ebf3f9"); $("#header").css("background-color", "#ebf3f9");document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#CFEBFF';rectangle.style.color = '#84B2D3';if(togglescroll==true){toggleLottie();togglescroll=false}});}
+							if(bottom3rdOfWindow>card1){;$("#bg").css("background-color", "#ebf3f9"); $("#header").css("background-color", "#ebf3f9");document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#CFEBFF';rectangle.style.color = '#84B2D3';if(togglescroll==true){toggleLottie();togglescroll=false}});}
 							else{
 								
 								$("#bg").css("background-color", "#ffffff");$("#header").css("background-color", "#ffffff");document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = 'white';rectangle.style.color = 'white';});
+								if(bottom3rdOfWindow>card0){if(togglescroll==true){toggleLottie();togglescroll=false}}
+								
 							}
 								
 							
@@ -161,4 +196,5 @@ $(window).on('scroll', function(e){
 		top:   e.clientY,
 	 });
 });
+
 
