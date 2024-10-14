@@ -144,17 +144,17 @@ setInterval(changeText, 2500); // Change text every 3.5 seconds
 
 	
 		
-		if(bottom3rdOfWindow>card6){$("#bg").css("background-color", "#ffffff");$("#header").css("background-color", "#ffffff"); document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#FFEDF3';rectangle.style.color = '#DA8FB7';});}
+		if(bottom3rdOfWindow>card6){$("#bg").css("background-color", "#ffffff");$("#header").css("background-color", "#ffffff"); document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#FFD4EA';rectangle.style.color = '#CB5078';});}
 		else{
-			if(bottom3rdOfWindow>card5){$("#bg").css("background-color", "#ebf3f9");$("#header").css("background-color", "#ebf3f9"); document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#CFEBFF';rectangle.style.color = '#84B2D3';});}
+			if(bottom3rdOfWindow>card5){$("#bg").css("background-color", "#ebf3f9");$("#header").css("background-color", "#ebf3f9"); document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#AFE3FC';rectangle.style.color = '#1A557D';});}
 			else{
-				if(bottom3rdOfWindow>card4){$("#bg").css("background-color", "#ebf9f4");$("#header").css("background-color", "#ebf9f4"); document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#CDF2E5';rectangle.style.color = '#8AB8A7';});}
+				if(bottom3rdOfWindow>card4){$("#bg").css("background-color", "#ebf9f4");$("#header").css("background-color", "#ebf9f4"); document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#95E3D1';rectangle.style.color = '#147860';});}
 				else{
-					if(bottom3rdOfWindow>card3){$("#bg").css("background-color", "#FCFBEA");$("#header").css("background-color", "#FCFBEA"); document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#F7F4D0';rectangle.style.color = '#C6C187';});}
+					if(bottom3rdOfWindow>card3){$("#bg").css("background-color", "#FCFBEA");$("#header").css("background-color", "#FCFBEA"); document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#FFE596';rectangle.style.color = '#947A2E';});}
 					else{
-						if(bottom3rdOfWindow>card2){$("#bg").css("background-color", "#f9efeb"); $("#header").css("background-color", "#f9efeb");document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#EDD4CD';rectangle.style.color = '#C69688';});}
+						if(bottom3rdOfWindow>card2){$("#bg").css("background-color", "#f9efeb"); $("#header").css("background-color", "#f9efeb");document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#FFC2B1';rectangle.style.color = '#954F3C';});}
 						else{
-							if(bottom3rdOfWindow>card1){;$("#bg").css("background-color", "#ebf3f9"); $("#header").css("background-color", "#ebf3f9");document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#CFEBFF';rectangle.style.color = '#84B2D3';if(togglescroll==true){toggleLottie();togglescroll=false}});}
+							if(bottom3rdOfWindow>card1){;$("#bg").css("background-color", "#ebf3f9"); $("#header").css("background-color", "#ebf3f9");document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#AFE3FC';rectangle.style.color = '#1A557D';if(togglescroll==true){toggleLottie();togglescroll=false}});}
 							else{
 								
 								$("#bg").css("background-color", "#ffffff");$("#header").css("background-color", "#ffffff");document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = 'white';rectangle.style.color = 'white';});
