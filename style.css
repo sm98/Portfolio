@@ -232,7 +232,7 @@ sign{color: #a9abab;}
 
 .chip{ 	display: inline-block; padding: 1vh 1vw 1vh 1vw; border-radius: 0.5vw;transition: background-color 1s ease;}
 
-.mobile-chip{	display: inline-block; padding: 0.5vh 0.8vw 0.5vh 0.8vw; border-radius: 1vw; background-color: #e6e6e6; color: #7b7b7b !important;}
+.mobile-chip{	display: inline-block; padding: 0.5vh 0.8vw 0.5vh 0.8vw; border-radius: 1vw; background-color: #95E3D1; color: #147860 !important;}
 
 
 .top-buffer { margin-top:200px; }
