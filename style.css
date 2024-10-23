@@ -444,3 +444,7 @@ html, body {
 	  .visible {
 		opacity: 1;
 	  }
+
+.about-img{
+	border-radius: 10px;
+  }
