@@ -458,3 +458,14 @@ html, body {
   .static:hover {
 	opacity:0;
   }
+
+  .fixed-overlay {
+    position: fixed; /* Fixes the position on screen */
+    bottom: 0px; /* Distance from the bottom */
+    right: 0px; /* Distance from the right */
+    width: auto; /* Adjust width as needed */
+    height: 7vh; /* Adjust height if necessary */
+    z-index: 999; /* Ensures it stays on top */
+    pointer-events: none; /* Ensures it doesn't interfere with clicks */
+}
+
