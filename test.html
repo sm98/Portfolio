@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Scroll Images</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            overflow: hidden;
+        }
+        .scroll-container {
+            width: 100vw;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+        }
+        .scroll-wrapper {
+            display: flex;
+            width: max-content;
+            animation: scroll 10s linear infinite;
+        }
+        .scroll-wrapper img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            margin: 0 10px;
+        }
+        @keyframes scroll {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-container">
+        <div class="scroll-wrapper" id="scrollWrapper">
+            <img src="https://via.placeholder.com/300x200" alt="Image 1">
+            <img src="https://via.placeholder.com/300x200" alt="Image 2">
+            <img src="https://via.placeholder.com/300x200" alt="Image 3">
+            <img src="https://via.placeholder.com/300x200" alt="Image 4">
+            <img src="https://via.placeholder.com/300x200" alt="Image 5">
+            <!-- Duplicate images for seamless effect -->
+            <img src="https://via.placeholder.com/300x200" alt="Image 1">
+            <img src="https://via.placeholder.com/300x200" alt="Image 2">
+            <img src="https://via.placeholder.com/300x200" alt="Image 3">
+            <img src="https://via.placeholder.com/300x200" alt="Image 4">
+            <img src="https://via.placeholder.com/300x200" alt="Image 5">
+        </div>
+    </div>
+</body>
+</html>

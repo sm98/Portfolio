@@ -183,6 +183,34 @@ setInterval(changeText, 2500); // Change text every 3.5 seconds
     $hamburger.toggleClass("is-active");
 	body.classList.toggle("lockscroll");
   	});
+
+// Register GSAP
+gsap.registerPlugin();
+
+// Function to create infinite horizontal scrolling
+function infiniteScroll(selector, direction = "left", speed = 30) {
+    let container = document.querySelector(selector);
+    let content = container.innerHTML;
+    
+    // Duplicate content for smooth looping
+    container.innerHTML += content;
+
+    let distance = container.scrollWidth / 2;
+
+    gsap.to(container, {
+        x: direction === "left" ? -distance : distance,
+        duration: speed,
+        ease: "linear",
+        repeat: -1
+    });
+}
+
+// Start scrolling for two rows in opposite directions
+infiniteScroll(".row1", "left", 20);
+infiniteScroll(".row2", "right", 25);
+
+
+
   });
 
 

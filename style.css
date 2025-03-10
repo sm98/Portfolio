@@ -470,3 +470,41 @@ html, body {
     pointer-events: none; /* Ensures it doesn't interfere with clicks */
 }
 
+.custom-horizontal-container {
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+}
+
+
+
+.scroll-container {
+	overflow: hidden;
+	white-space: nowrap;
+	position: relative;
+	 /* Fade effect using mask */
+	 -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0));
+	 mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0));
+ 
+}
+.scroll-wrapper {
+	display: flex;
+	width: max-content;
+	animation: scroll 24s linear infinite;
+}
+.scroll-wrapper img {
+	height: 25vh;
+	object-fit: cover;
+	margin: 0 10px;
+}
+@keyframes scroll {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-50%);
+	}
+}
