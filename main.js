@@ -144,9 +144,9 @@ setInterval(changeText, 2500); // Change text every 3.5 seconds
 
 	
 		
-		if(bottom3rdOfWindow>card6){$("#bg").css("background-color", "#ffffff");$("#header").css("background-color", "#ffffff"); document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#FFD4EA';rectangle.style.color = '#CB5078';});}
+		if(bottom3rdOfWindow>card6){$("#bg").css("background-color", "#ffffff");$("#header").css("background-color", "#ffffff"); document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#AFE3FC';rectangle.style.color = '#1A557D';});}
 		else{
-			if(bottom3rdOfWindow>card5){$("#bg").css("background-color", "#ebf3f9");$("#header").css("background-color", "#ebf3f9"); document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#AFE3FC';rectangle.style.color = '#1A557D';});}
+			if(bottom3rdOfWindow>card5){$("#bg").css("background-color", "#ffffff");$("#header").css("background-color", "#ffffff"); document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#AFE3FC';rectangle.style.color = '#1A557D';});}
 			else{
 				if(bottom3rdOfWindow>card4){$("#bg").css("background-color", "#ebf9f4");$("#header").css("background-color", "#ebf9f4"); document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#95E3D1';rectangle.style.color = '#147860';});}
 				else{
