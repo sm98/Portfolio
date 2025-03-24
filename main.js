@@ -144,13 +144,13 @@ setInterval(changeText, 2500); // Change text every 3.5 seconds
 
 	
 		
-		if(bottom3rdOfWindow>card6){$("#bg").css("background-color", "#ffffff");$("#header").css("background-color", "#ffffff"); document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#AFE3FC';rectangle.style.color = '#1A557D';});}
+		if(bottom3rdOfWindow>card6){$("#bg").css("background-color", "#ffffff");$("#header").css("background-color", "#ffffff"); document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#FFE596';rectangle.style.color = '#947A2E';});}
 		else{
-			if(bottom3rdOfWindow>card5){$("#bg").css("background-color", "#ffffff");$("#header").css("background-color", "#ffffff"); document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#AFE3FC';rectangle.style.color = '#1A557D';});}
+			if(bottom3rdOfWindow>card5){$("#bg").css("background-color", "#ffffff");$("#header").css("background-color", "#ffffff"); document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#FFE596';rectangle.style.color = '#947A2E';});}
 			else{
 				if(bottom3rdOfWindow>card4){$("#bg").css("background-color", "#ebf9f4");$("#header").css("background-color", "#ebf9f4"); document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#95E3D1';rectangle.style.color = '#147860';});}
 				else{
-					if(bottom3rdOfWindow>card3){$("#bg").css("background-color", "#FCFBEA");$("#header").css("background-color", "#FCFBEA"); document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#FFE596';rectangle.style.color = '#947A2E';});}
+					if(bottom3rdOfWindow>card3){$("#bg").css("background-color", "#EFEBF8");$("#header").css("background-color", "#EFEBF8"); document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#D8C9FF';rectangle.style.color = '#65548F';});}
 					else{
 						if(bottom3rdOfWindow>card2){$("#bg").css("background-color", "#f9efeb"); $("#header").css("background-color", "#f9efeb");document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#FFC2B1';rectangle.style.color = '#954F3C';});}
 						else{
