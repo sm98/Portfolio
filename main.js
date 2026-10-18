@@ -1,233 +1,136 @@
-
-$(document).ready(function () {  
-
-	const textElement = document.getElementById('changingText');
-	const textElement2 = document.getElementById('changingText2');
-        const texts = ['Sanoop', ' सनूप', ' സനൂപ്']; // English, Devanagari, and Malayalam
-        let index = 0;
-        function changeText() {
-            index = (index + 1) % texts.length;
-            textElement.textContent = texts[index];
-            textElement.classList.remove('slide-up');
-            void textElement.offsetWidth; // Trigger a reflow to restart the animation
-            textElement.classList.add('slide-up');
-			textElement2.textContent = texts[index];
-            textElement2.classList.remove('slide-up');
-            void textElement2.offsetWidth; // Trigger a reflow to restart the animation
-            textElement2.classList.add('slide-up');
-						
-        }
-setInterval(changeText, 2500); // Change text every 3.5 seconds
-
-
+(function () {
 	'use strict';
-	
-	var lockscroll=false;
-	 var c, currentScrollTop = 0,
-		 navbar = $('#header');
 
-	var togglescroll = true;
-	let mouseCursor = document.querySelector(".cursor");
-	let navLinks = document.querySelectorAll(".nav-links li");
-	let projLinks = document.querySelectorAll(".project-link");
-	let footer = document.querySelectorAll(".footer2");
-	let contact = document.querySelectorAll(".contact-link");
-	let linkmid = document.querySelectorAll(".link-mid");
-	
-	document.addEventListener('mouseover',function(){
-		mouseCursor.classList.add("link-normal");
-	  });
+	const $ = (sel, root = document) => root.querySelector(sel);
+	const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
-	navLinks.forEach(link=>{
-		link.addEventListener('mouseover',()=>{
-			mouseCursor.classList.add("link-grow");
-			
+	/* ---------- Rotating name in the hero (home page only) ---------- */
+	const nameEls = ['changingText', 'changingText2']
+		.map((id) => document.getElementById(id))
+		.filter(Boolean);
+
+	if (nameEls.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+		const names = ['Sanoop', ' सनूप', ' സനൂപ്']; // English, Devanagari, Malayalam
+		let nameIndex = 0;
+		setInterval(() => {
+			nameIndex = (nameIndex + 1) % names.length;
+			nameEls.forEach((el) => {
+				el.textContent = names[nameIndex];
+				el.classList.remove('slide-up');
+				void el.offsetWidth; // reflow so the animation restarts
+				el.classList.add('slide-up');
+			});
+		}, 2500);
+	}
+
+	/* ---------- Custom cursor ---------- */
+	const cursor = document.getElementById('circle');
+	if (cursor) {
+		cursor.classList.add('link-normal');
+
+		const growOn = (selector, cls) => {
+			$$(selector).forEach((el) => {
+				el.addEventListener('mouseover', () => cursor.classList.add(cls));
+				el.addEventListener('mouseleave', () => cursor.classList.remove(cls));
+			});
+		};
+		growOn('.nav-links li, .contact-link, .link-mid', 'link-grow');
+		growOn('.project-link', 'link-grow-large');
+
+		document.addEventListener('mousemove', (e) => {
+			cursor.style.left = e.clientX + 'px';
+			cursor.style.top = e.clientY + 'px';
+		}, { passive: true });
+	}
+
+	/* ---------- Fade-in on scroll ---------- */
+	const fadeIns = $$('.fade-in');
+	if ('IntersectionObserver' in window) {
+		const io = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => entry.target.classList.toggle('visible', entry.isIntersecting));
 		});
-		link.addEventListener('mouseleave',()=>{
-			mouseCursor.classList.remove("link-grow");
+		fadeIns.forEach((el) => io.observe(el));
+	} else {
+		fadeIns.forEach((el) => el.classList.add('visible'));
+	}
+
+	/* ---------- Hamburger menu ---------- */
+	const hamburger = $('.hamburger');
+	if (hamburger) {
+		hamburger.addEventListener('click', () => {
+			hamburger.classList.toggle('is-active');
+			document.body.classList.toggle('lockscroll');
 		});
-	});
-	
-	navLinks.forEach(link=>{
-		link.addEventListener('mouseover',()=>{
-			mouseCursor.classList.add("link-grow");
-			
+	}
+
+	/* ---------- Scroll behaviour: hide/show navbar + section colours ---------- */
+	const navbar = document.getElementById('header');
+	const bg = document.getElementById('bg');
+	const lottie = document.getElementById('lottiefile');
+	const cards = [0, 1, 2, 3, 4, 5, 6].map((i) => document.getElementById('card' + i));
+	const hasCards = cards.every(Boolean);
+
+	// [first card index it applies to, page background, chip background, chip text]
+	const themes = [
+		[6, '#ffffff', '#FFE596', '#947A2E'],
+		[5, '#ffffff', '#FFE596', '#947A2E'],
+		[4, '#ebf9f4', '#95E3D1', '#147860'],
+		[3, '#EFEBF8', '#D8C9FF', '#65548F'],
+		[2, '#f9efeb', '#FFC2B1', '#954F3C'],
+		[1, '#ebf3f9', '#AFE3FC', '#1A557D'],
+	];
+	const defaultTheme = ['#ffffff', 'white', 'white'];
+
+	const chips = $$('.chip');
+	let lastScrollTop;
+	let lottieHidden = false;
+	let currentTheme = '';
+	let ticking = false;
+
+	const applyTheme = (page, chipBg, chipFg) => {
+		if (currentTheme === page + chipBg) return;
+		currentTheme = page + chipBg;
+		if (bg) bg.style.backgroundColor = page;
+		if (navbar) navbar.style.backgroundColor = page;
+		chips.forEach((chip) => {
+			chip.style.backgroundColor = chipBg;
+			chip.style.color = chipFg;
 		});
-		link.addEventListener('mouseleave',()=>{
-			mouseCursor.classList.remove("link-grow");
-		});
-	});
+	};
 
-	contact.forEach(link=>{
-		link.addEventListener('mouseover',()=>{
-			mouseCursor.classList.add("link-grow");
-			
-		});
-		link.addEventListener('mouseleave',()=>{
-			mouseCursor.classList.remove("link-grow");
-		});
-	});
-		
-	linkmid.forEach(link=>{
-		link.addEventListener('mouseover',()=>{
-			mouseCursor.classList.add("link-grow");
-			
-		});
-		link.addEventListener('mouseleave',()=>{
-			mouseCursor.classList.remove("link-grow");
-		});
-	});
-		
+	const update = () => {
+		ticking = false;
+		const scrollTop = window.pageYOffset;
 
-	projLinks.forEach(link=>{
-		link.addEventListener('mouseover',()=>{
-			mouseCursor.classList.add("link-grow-large");
-			
-		});
-		link.addEventListener('mouseleave',()=>{
-			mouseCursor.classList.remove("link-grow-large");
-		});
-	});
-
-	
-	 $(window).scroll(function () {
-
-		function isElementInViewport(el) {
-			const rect = el.getBoundingClientRect();
-			return (rect.top < window.innerHeight && rect.bottom > 0);
-		  }
-		  
-		  const fadeIns = document.querySelectorAll('.fade-in');      
-		  fadeIns.forEach(function(el) {
-			if (isElementInViewport(el)) {
-			  el.classList.add('visible');} 
-			  else {el.classList.remove('visible');}
-		  });
-
-
-
-
-		var a = $(window).scrollTop();
-		var b = 56;
-	   
-		currentScrollTop = a;
-	   
-		if ((c < currentScrollTop )&&( a > b + b )&&(!lockscroll)) {
-		  navbar.addClass("scrollUp");
-		} 
-		else if (c > currentScrollTop && !(a <= b)) {
-		  navbar.removeClass("scrollUp");
-		}
-		c = currentScrollTop;
-
-		
-		var topOfWindow = $(window).scrollTop();
-		var partOfWindow= $(window).height();
-		var bottom3rdOfWindow = topOfWindow + (partOfWindow*2/3);
-		var bottomOfWindow = topOfWindow + $(window).height();
-		
-		
-		
-		var card0 =$('#card0').offset().top;
-		var card1 =$('#card1').offset().top;
-		var card2 =$('#card2').offset().top;
-		var card3 =$('#card3').offset().top;
-		var card4 =$('#card4').offset().top;
-		var card5 =$('#card5').offset().top;
-		var card6 =$('#card6').offset().top;
-
-		function toggleLottie() {
-			
-			var element = document.getElementById('lottiefile');
-			element.classList.toggle('hidden');
+		if (navbar) {
+			if (lastScrollTop < scrollTop && scrollTop > 112 && !document.body.classList.contains('lockscroll')) {
+				navbar.classList.add('scrollUp');
+			} else if (lastScrollTop > scrollTop && scrollTop > 56) {
+				navbar.classList.remove('scrollUp');
+			}
+			lastScrollTop = scrollTop;
 		}
 
-	
-		
-		if(bottom3rdOfWindow>card6){$("#bg").css("background-color", "#ffffff");$("#header").css("background-color", "#ffffff"); document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#FFE596';rectangle.style.color = '#947A2E';});}
-		else{
-			if(bottom3rdOfWindow>card5){$("#bg").css("background-color", "#ffffff");$("#header").css("background-color", "#ffffff"); document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#FFE596';rectangle.style.color = '#947A2E';});}
-			else{
-				if(bottom3rdOfWindow>card4){$("#bg").css("background-color", "#ebf9f4");$("#header").css("background-color", "#ebf9f4"); document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#95E3D1';rectangle.style.color = '#147860';});}
-				else{
-					if(bottom3rdOfWindow>card3){$("#bg").css("background-color", "#EFEBF8");$("#header").css("background-color", "#EFEBF8"); document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#D8C9FF';rectangle.style.color = '#65548F';});}
-					else{
-						if(bottom3rdOfWindow>card2){$("#bg").css("background-color", "#f9efeb"); $("#header").css("background-color", "#f9efeb");document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#FFC2B1';rectangle.style.color = '#954F3C';});}
-						else{
-							if(bottom3rdOfWindow>card1){;$("#bg").css("background-color", "#ebf3f9"); $("#header").css("background-color", "#ebf3f9");document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = '#AFE3FC';rectangle.style.color = '#1A557D';if(togglescroll==true){toggleLottie();togglescroll=false}});}
-							else{
-								
-								$("#bg").css("background-color", "#ffffff");$("#header").css("background-color", "#ffffff");document.querySelectorAll('.chip').forEach(rectangle => {rectangle.style.backgroundColor = 'white';rectangle.style.color = 'white';});
-								if(bottom3rdOfWindow>card0){if(togglescroll==true){toggleLottie();togglescroll=false}}
-								
-							}
-								
-							
-						}
-					}
-				}
-			}			
+		if (!hasCards) return;
+
+		const probe = scrollTop + window.innerHeight * 2 / 3;
+		const top = (el) => el.getBoundingClientRect().top + scrollTop;
+
+		const match = themes.find(([i]) => probe > top(cards[i]));
+		if (match) applyTheme(match[1], match[2], match[3]);
+		else applyTheme(...defaultTheme);
+
+		if (!lottieHidden && lottie && probe > top(cards[0])) {
+			lottie.classList.add('hidden');
+			lottieHidden = true;
 		}
-	
-		
-		
+	};
 
-		
-		
-
-	});
-	var body = document.body;
-	
-	var $hamburger = $(".hamburger");
-  	$hamburger.on("click", function(e) {
-    $hamburger.toggleClass("is-active");
-	body.classList.toggle("lockscroll");
-  	});
-
-// Register GSAP
-gsap.registerPlugin();
-
-// Function to create infinite horizontal scrolling
-function infiniteScroll(selector, direction = "left", speed = 30) {
-    let container = document.querySelector(selector);
-    let content = container.innerHTML;
-    
-    // Duplicate content for smooth looping
-    container.innerHTML += content;
-
-    let distance = container.scrollWidth / 2;
-
-    gsap.to(container, {
-        x: direction === "left" ? -distance : distance,
-        duration: speed,
-        ease: "linear",
-        repeat: -1
-    });
-}
-
-// Start scrolling for two rows in opposite directions
-infiniteScroll(".row1", "left", 20);
-infiniteScroll(".row2", "right", 25);
-
-
-
-  });
-
-
-
-
-$(document).on('mousemove', function(e){
-    $('#circle').css({
-       left:  e.clientX,
-       top:   e.clientY,
-    });
-});
-
-$(window).on('scroll', function(e){ 
-	$('#circle').css({
-		left:  e.clientX,
-		top:   e.clientY,
-	 });
-});
-
-
+	window.addEventListener('scroll', () => {
+		if (!ticking) {
+			ticking = true;
+			requestAnimationFrame(update);
+		}
+	}, { passive: true });
+	update();
+})();

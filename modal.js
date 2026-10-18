@@ -1,44 +1,40 @@
-// Function to attach event listeners to modal images
-function attachModalEventListeners() {
-  var imgContainer = document.querySelector(".light");
-  var imgElements = imgContainer.querySelectorAll(".img-gallery");
-  var modal = document.getElementById("myModal"); // Get the modal element directly
-  var modalImg = document.getElementById("img01");
-  var captionText = document.getElementById("caption");
+// Image lightbox: click any .img-gallery image to enlarge it; Esc or the close button dismisses it.
+(function () {
+	'use strict';
 
-  imgElements.forEach(function(img) {
-    img.addEventListener("click", function() {
-      modal.style.display = "block";
-      modalImg.src = this.src;
-      modalImg.alt = this.alt;
-      captionText.textContent = this.alt;
-      modalImg.focus(); // Set focus to the modal content
-      document.body.style.overflow = "hidden"; // Prevent scrolling when modal is open
-    });
-  });
+	const modal = document.getElementById('myModal');
+	if (!modal) return;
 
-  // Get the <span> element that closes the modal
-  var span = document.querySelector(".close");
+	const modalImg = document.getElementById('img01');
+	const caption = document.getElementById('caption');
+	const closeBtn = document.querySelector('.close');
+	let lastTrigger = null;
 
-  span.addEventListener("click", function() {
-    modal.style.display = "none";
-    imgContainer.focus(); // Return focus to the image gallery container
-    document.body.style.overflow = ""; // Restore scrolling when modal is closed
-    // Reattach event listeners after modal is closed
-    attachModalEventListeners();
-  });
+	function open(img) {
+		lastTrigger = img;
+		modal.style.display = 'block';
+		modalImg.src = img.currentSrc || img.src;
+		modalImg.alt = img.alt;
+		caption.textContent = img.alt;
+		modalImg.focus();
+		document.body.style.overflow = 'hidden';
+	}
 
-  // Close modal when pressing Esc key
-  document.addEventListener("keydown", function(event) {
-    if (event.key === "Escape") {
-      modal.style.display = "none";
-      imgContainer.focus(); // Return focus to the image gallery container
-      document.body.style.overflow = ""; // Restore scrolling when modal is closed
-      // Reattach event listeners after modal is closed
-      attachModalEventListeners();
-    }
-  });
-}
+	function close() {
+		modal.style.display = 'none';
+		document.body.style.overflow = '';
+		if (lastTrigger) lastTrigger.focus();
+	}
 
-// Call the function to attach event listeners when the page loads
-attachModalEventListeners();
+	// One delegated listener covers every gallery image, current and future.
+	document.addEventListener('click', (e) => {
+		const img = e.target.closest('.img-gallery');
+		if (img) open(img);
+	});
+
+	if (closeBtn) closeBtn.addEventListener('click', close);
+
+	document.addEventListener('keydown', (e) => {
+		if (e.key === 'Escape' && modal.style.display === 'block') close();
+	});
+})();
