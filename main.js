@@ -109,6 +109,38 @@
 		});
 	});
 
+	/* ---------- Case-study section index ---------- */
+	let syncIndex = null;
+	const sectionLabels = $$('.section-label').filter((h) => {
+		const text = h.textContent.trim();
+		return text.length > 0 && text.length < 40 && !h.closest('nav, a, .footer2');
+	});
+	if (sectionLabels.length >= 3) {
+		const index = document.createElement('nav');
+		index.id = 'section-index';
+		index.setAttribute('aria-label', 'Sections');
+		const links = sectionLabels.map((h, i) => {
+			const label = $('.highlight', h) || h;
+			const text = label.textContent.replace(/\s+/g, ' ').trim().toLowerCase();
+			h.id = h.id || 'section-' + i;
+			const a = document.createElement('a');
+			a.href = '#' + h.id;
+			a.textContent = text;
+			a.title = text;
+			index.appendChild(a);
+			return a;
+		});
+		document.body.appendChild(index);
+
+		syncIndex = () => {
+			let current = -1;
+			sectionLabels.forEach((h, i) => {
+				if (h.getBoundingClientRect().top < window.innerHeight * 0.35) current = i;
+			});
+			links.forEach((a, i) => a.classList.toggle('active', i === current));
+		};
+	}
+
 	/* ---------- Hamburger menu ---------- */
 	const hamburger = $('.hamburger');
 	if (hamburger) {
@@ -165,6 +197,8 @@
 	const update = () => {
 		ticking = false;
 		const scrollTop = window.pageYOffset;
+
+		if (syncIndex) syncIndex();
 
 		if (progress) {
 			const max = document.documentElement.scrollHeight - window.innerHeight;
