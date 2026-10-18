@@ -37,9 +37,24 @@
 		growOn('.nav-links li, .contact-link, .link-mid', 'link-grow');
 		growOn('.project-link', 'link-grow-large');
 
+		// Ease the circle towards the pointer instead of snapping to it.
+		let targetX = 0, targetY = 0, x = 0, y = 0, cursorStarted = false;
+		const follow = () => {
+			x += (targetX - x) * 0.2;
+			y += (targetY - y) * 0.2;
+			cursor.style.left = x + 'px';
+			cursor.style.top = y + 'px';
+			requestAnimationFrame(follow);
+		};
 		document.addEventListener('mousemove', (e) => {
-			cursor.style.left = e.clientX + 'px';
-			cursor.style.top = e.clientY + 'px';
+			targetX = e.clientX;
+			targetY = e.clientY;
+			if (!cursorStarted) {
+				x = targetX;
+				y = targetY;
+				cursorStarted = true;
+				requestAnimationFrame(follow);
+			}
 		}, { passive: true });
 	}
 
@@ -47,12 +62,52 @@
 	const fadeIns = $$('.fade-in');
 	if ('IntersectionObserver' in window) {
 		const io = new IntersectionObserver((entries) => {
-			entries.forEach((entry) => entry.target.classList.toggle('visible', entry.isIntersecting));
-		});
+			entries.forEach((entry) => {
+				if (!entry.isIntersecting) return;
+				entry.target.classList.add('visible');
+				io.unobserve(entry.target); // animate in once
+			});
+		}, { rootMargin: '0px 0px -8% 0px' });
 		fadeIns.forEach((el) => io.observe(el));
 	} else {
 		fadeIns.forEach((el) => el.classList.add('visible'));
 	}
+
+	/* ---------- Pause autoplaying video for reduced-motion users ---------- */
+	if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+		$$('video[autoplay]').forEach((v) => {
+			v.removeAttribute('autoplay');
+			v.pause();
+			v.controls = true;
+		});
+	}
+
+	/* ---------- Toast + copy email ---------- */
+	const toast = document.createElement('div');
+	toast.id = 'toast';
+	toast.setAttribute('role', 'status');
+	toast.setAttribute('aria-live', 'polite');
+	document.body.appendChild(toast);
+	let toastTimer;
+	const showToast = (msg) => {
+		toast.textContent = msg;
+		toast.classList.add('show');
+		clearTimeout(toastTimer);
+		toastTimer = setTimeout(() => toast.classList.remove('show'), 2000);
+	};
+
+	// Text email links copy to the clipboard; the envelope icon still opens the mail app.
+	$$('a.highlight[href^="mailto:"], a[href^="mailto:"] .highlight').forEach((node) => {
+		const link = node.closest('a');
+		link.addEventListener('click', (e) => {
+			if (!navigator.clipboard) return;
+			e.preventDefault();
+			const email = link.getAttribute('href').replace('mailto:', '').trim();
+			navigator.clipboard.writeText(email)
+				.then(() => showToast('Email copied \u2713'))
+				.catch(() => { window.location.href = link.href; });
+		});
+	});
 
 	/* ---------- Hamburger menu ---------- */
 	const hamburger = $('.hamburger');
@@ -98,9 +153,23 @@
 		});
 	};
 
+	// Reading progress bar on every page except the home page.
+	let progress = null;
+	if (!document.getElementById('card0')) {
+		progress = document.createElement('div');
+		progress.id = 'read-progress';
+		progress.setAttribute('aria-hidden', 'true');
+		document.body.appendChild(progress);
+	}
+
 	const update = () => {
 		ticking = false;
 		const scrollTop = window.pageYOffset;
+
+		if (progress) {
+			const max = document.documentElement.scrollHeight - window.innerHeight;
+			progress.style.transform = 'scaleX(' + (max > 0 ? Math.min(scrollTop / max, 1) : 0) + ')';
+		}
 
 		if (navbar) {
 			if (lastScrollTop < scrollTop && scrollTop > 112 && !document.body.classList.contains('lockscroll')) {
